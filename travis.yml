@@ -1,5 +1,8 @@
 language: java
 jdk:
   - oraclejdk8
+services:
+  - mysql
 before_install:
-  - +x mvnw
+  - chmod +x mvnw
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS test;'
